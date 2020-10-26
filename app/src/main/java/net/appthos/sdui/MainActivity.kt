@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             adapter = componentAdapter
-        }.addItemDecoration(ComponentItemDecorator(this))
+        }.addItemDecoration(ComponentItemDecoration(this))
 
 
         componentAdapter.submitList(dataProvider.getServerData())

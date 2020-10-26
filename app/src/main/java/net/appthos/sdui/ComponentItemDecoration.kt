@@ -11,7 +11,7 @@ import net.appthos.sdui.data.ComponentData.Companion.VIEW_TYPE_PARTNER
 import net.appthos.sdui.data.ComponentData.Companion.VIEW_TYPE_TITLE
 import net.appthos.sdui.extensions.dpToPx
 
-class ComponentItemDecorator(private val context: Context) : RecyclerView.ItemDecoration() {
+class ComponentItemDecoration(private val context: Context) : RecyclerView.ItemDecoration() {
 
     override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
         if (null != parent.adapter) {
@@ -45,6 +45,17 @@ class ComponentItemDecorator(private val context: Context) : RecyclerView.ItemDe
                                 break
                             }
                         }
+                    }
+                }
+
+                // horizontal margins
+                if (itemSpanSize == 1) {
+                    if (itemSpanRowIndex == 0) {
+                        outRect.left = context.dpToPx(16F).toInt()
+                        outRect.right = context.dpToPx(10F).toInt()
+                    } else {
+                        outRect.left = context.dpToPx(10F).toInt()
+                        outRect.right = context.dpToPx(16F).toInt()
                     }
                 }
 

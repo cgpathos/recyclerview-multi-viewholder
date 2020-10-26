@@ -10,6 +10,8 @@
         android:id="@+id/list_gallery"
         android:layout_width="match_parent"
         android:layout_height="150dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_component_gallery" />
