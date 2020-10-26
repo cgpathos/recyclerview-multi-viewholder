@@ -4,12 +4,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_24dp_bg"
+    android:backgroundTint="@color/light_blue_600">
 
     <ImageView
         android:id="@+id/img_cover"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@drawable/cover_default_bg"
+        android:backgroundTint="@color/light_blue_50"
         app:layout_constraintBottom_toTopOf="@+id/txt_partner_name"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,8 +23,11 @@
     <TextView
         android:id="@+id/txt_partner_name"
         android:layout_width="0dp"
-        android:layout_height="48dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:gravity="center_vertical"
+        android:textColor="@color/system_white"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

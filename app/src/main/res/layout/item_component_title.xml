@@ -2,7 +2,9 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_8dp_bg"
+    android:backgroundTint="@color/green_800">
 
     <TextView
         android:id="@+id/txt_title"
@@ -11,6 +13,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:gravity="center_vertical"
+        android:textColor="@color/system_white"
         android:textSize="36sp"
         android:textStyle="bold"
         tools:text="TITLE" />

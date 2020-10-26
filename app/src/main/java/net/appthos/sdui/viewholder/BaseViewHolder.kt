@@ -3,13 +3,13 @@ package net.appthos.sdui.viewholder
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import net.appthos.sdui.ComponentAdapter
 import net.appthos.sdui.R
-import net.appthos.sdui.data.ComponentData
-import net.appthos.sdui.data.GalleryGroupData
-import net.appthos.sdui.data.PartnerData
-import net.appthos.sdui.data.TitleData
+import net.appthos.sdui.data.*
 import net.appthos.sdui.databinding.ItemComponentGalleryBinding
+import net.appthos.sdui.databinding.ItemComponentGalleryGroupBinding
 import net.appthos.sdui.databinding.ItemComponentPartnerBinding
 import net.appthos.sdui.databinding.ItemComponentTitleBinding
 
@@ -36,8 +36,26 @@ class GalleryViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     private val bnd: ItemComponentGalleryBinding = ItemComponentGalleryBinding.bind(itemView)
 
     override fun bind(data: ComponentData) {
-        if (data is GalleryGroupData) {
+        if (data is GalleryData) {
 
+        }
+    }
+}
+
+class GalleryGroupViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
+    BaseViewHolder(R.layout.item_component_gallery_group, inflater, parent) {
+    private val bnd: ItemComponentGalleryGroupBinding = ItemComponentGalleryGroupBinding.bind(itemView)
+
+    init {
+        bnd.listGallery.apply {
+            layoutManager = LinearLayoutManager(itemView.context, RecyclerView.HORIZONTAL, false)
+            isNestedScrollingEnabled = false
+        }
+    }
+
+    override fun bind(data: ComponentData) {
+        if (data is GalleryGroupData) {
+            bnd.listGallery.adapter = ComponentAdapter(data.galleryList)
         }
     }
 }
