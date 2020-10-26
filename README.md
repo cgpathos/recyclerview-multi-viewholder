@@ -3,7 +3,7 @@
 > SDUI 구현하면서 RecyclerView의 ViewHolder를 평소보다 좀더 복잡하게 사용했던 경험을 정리했다.  
 > 추가로 서버에서 내려오는 데이터를 RxJava를 이용해서 일정등의 문제로 발생한 제약조건에 맞게 가공했던 경험도 정리했다.
 
-## 조금 더 복잡한 Multi ViewHolder
+## 조금 더 복잡한 Multi ViewHolder([관련글](https://neopathos.medium.com/%EC%A1%B0%EA%B8%88-%EB%8D%94-%EB%B3%B5%EC%9E%A1%ED%95%9C-multi-viewholder-5575d2906cd7))
 
 ### 제약조건
 
