@@ -1,6 +1,7 @@
 package net.appthos.sdui.data
 
 import androidx.recyclerview.widget.DiffUtil
+import net.appthos.sdui.data.ComponentData.Companion.VIEW_TYPE_FOOTER
 import net.appthos.sdui.data.ComponentData.Companion.VIEW_TYPE_GALLERY
 import net.appthos.sdui.data.ComponentData.Companion.VIEW_TYPE_GALLERY_GROUP
 import net.appthos.sdui.data.ComponentData.Companion.VIEW_TYPE_PARTNER
@@ -18,6 +19,7 @@ interface ComponentData {
         const val VIEW_TYPE_GALLERY = 1
         const val VIEW_TYPE_GALLERY_GROUP = 2
         const val VIEW_TYPE_PARTNER = 3
+        const val VIEW_TYPE_FOOTER = 3000
 
         fun diffItemCallback() = object : DiffUtil.ItemCallback<ComponentData>() {
             override fun areItemsTheSame(oldItem: ComponentData, newItem: ComponentData): Boolean {
@@ -58,4 +60,10 @@ data class GalleryGroupData(
     val galleryList: List<GalleryData>
 ) : ComponentData {
     override val viewType: Int = VIEW_TYPE_GALLERY_GROUP
+}
+
+data class FooterData(
+    override val id: Int, override val groupId: Int,
+) : ComponentData {
+    override val viewType: Int = VIEW_TYPE_FOOTER
 }

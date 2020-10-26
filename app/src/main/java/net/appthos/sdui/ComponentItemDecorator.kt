@@ -5,6 +5,7 @@ import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import net.appthos.sdui.data.ComponentData.Companion.VIEW_TYPE_FOOTER
 import net.appthos.sdui.data.ComponentData.Companion.VIEW_TYPE_GALLERY_GROUP
 import net.appthos.sdui.data.ComponentData.Companion.VIEW_TYPE_PARTNER
 import net.appthos.sdui.data.ComponentData.Companion.VIEW_TYPE_TITLE
@@ -56,7 +57,11 @@ class ComponentItemDecorator(private val context: Context) : RecyclerView.ItemDe
 
                 // bottom margin
                 if (spanGroupPosition == spanGroupCount) {
-                    outRect.bottom = context.dpToPx(60F).toInt()
+                    if (currentItemType == VIEW_TYPE_FOOTER) {
+                        outRect.bottom = 0
+                    } else {
+                        outRect.bottom = context.dpToPx(60F).toInt()
+                    }
                 } else if (currentItemType == VIEW_TYPE_TITLE && nextSpanGroupItemType == VIEW_TYPE_PARTNER) {
                     outRect.bottom = context.dpToPx(10F).toInt()
                 } else if (currentItemType == VIEW_TYPE_TITLE && nextSpanGroupItemType == VIEW_TYPE_GALLERY_GROUP) {

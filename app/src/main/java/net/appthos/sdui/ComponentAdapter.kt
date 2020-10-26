@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import net.appthos.sdui.data.ComponentData
+import net.appthos.sdui.data.ComponentData.Companion.VIEW_TYPE_FOOTER
 import net.appthos.sdui.data.ComponentData.Companion.VIEW_TYPE_GALLERY
 import net.appthos.sdui.data.ComponentData.Companion.VIEW_TYPE_GALLERY_GROUP
 import net.appthos.sdui.data.ComponentData.Companion.VIEW_TYPE_PARTNER
@@ -24,6 +25,7 @@ class ComponentAdapter() :
             VIEW_TYPE_GALLERY -> GalleryViewHolder(inflater, parent)
             VIEW_TYPE_GALLERY_GROUP -> GalleryGroupViewHolder(inflater, parent)
             VIEW_TYPE_PARTNER -> PartnerViewHolder(inflater, parent)
+            VIEW_TYPE_FOOTER -> FooterViewHolder(inflater, parent)
             else -> NoneViewHolder(inflater, parent)
         }
     }

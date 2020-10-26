@@ -13,4 +13,5 @@
     <color name="yellow_600">#FDD835</color>
     <color name="light_blue_50">#E1F5FE</color>
     <color name="light_blue_600">#039BE5</color>
+    <color name="gray_100">#F5F5F5</color>
 </resources>

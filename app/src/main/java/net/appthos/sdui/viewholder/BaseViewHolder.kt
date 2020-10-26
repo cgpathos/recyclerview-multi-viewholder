@@ -71,6 +71,14 @@ class PartnerViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     }
 }
 
+class FooterViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
+    BaseViewHolder(R.layout.item_component_footer, inflater, parent) {
+
+    override fun bind(data: ComponentData) {
+
+    }
+}
+
 class NoneViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     BaseViewHolder(R.layout.item_none, inflater, parent) {
 
