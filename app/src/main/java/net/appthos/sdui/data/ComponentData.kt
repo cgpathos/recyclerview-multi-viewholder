@@ -57,9 +57,13 @@ data class GalleryData(
 
 data class GalleryGroupData(
     override val id: Int, override val groupId: Int,
-    val galleryList: List<GalleryData>
+    val galleryList: ArrayList<GalleryData> = ArrayList()
 ) : ComponentData {
     override val viewType: Int = VIEW_TYPE_GALLERY_GROUP
+
+    fun addGalleryData(data: GalleryData) {
+        galleryList.add(data)
+    }
 }
 
 data class FooterData(

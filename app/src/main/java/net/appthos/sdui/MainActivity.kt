@@ -36,7 +36,15 @@ class MainActivity : AppCompatActivity() {
             adapter = componentAdapter
         }.addItemDecoration(ComponentItemDecoration(this))
 
+        dataProvider.processingServerData {
+            componentAdapter.submitList(it)
+        }
+    }
 
-        componentAdapter.submitList(dataProvider.getServerData())
+    override fun onDestroy() {
+        dataProvider.onDestroy()
+
+        super.onDestroy()
+
     }
 }
